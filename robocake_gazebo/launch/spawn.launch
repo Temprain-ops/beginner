@@ -15,11 +15,11 @@
           args="-x $(arg x) -y $(arg y) -z 0.1 -Y $(arg theta) -urdf
                 -model $(arg robot_name) -param robot_description -b"/>
     <node name="control" pkg="robocake_algorithm" type="random"
-          if="$(eval algorithm and model == 'green')">
+          if="$(eval algorithm and model == 'orange')">
       <param name="threshold" value="0.5"/>
     </node>
-    <node name="control" pkg="robocake_algorithm" type="follow"
-          if="$(eval algorithm and model == 'orange')">
+    <node name="control" pkg="robocake_algorithm" type="pid"
+          if="$(eval algorithm and model == 'green')">
       <param name="threshold" value="0.2"/>
     </node>
   </group>

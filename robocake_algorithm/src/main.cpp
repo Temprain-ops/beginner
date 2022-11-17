@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
 
   threshold = ros::NodeHandle{"~"}.param("threshold", 0.5);
 
-  auto timer = node.createTimer(ros::Duration{0.5}, timer_callback);
+  auto timer = node.createTimer(ros::Duration{0.1}, timer_callback);
 
   ros::spin();
 }

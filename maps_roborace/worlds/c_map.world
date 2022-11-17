@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="c_map">
+
+    <!-- Optional tweaks to increase performance -->
+    <scene>
+        <shadows>false</shadows>
+    </scene>
+    <physics type="ode">
+        <!--
+        real_time_update_rate: how many times per second physics are calculated.
+        max_step_size: how much simulator time passes between physics updates.
+        Note that the product of these numbers determines how fast simulator
+        time is compared to real time. For example, setting these values to 500
+        and 0.001 should increase performance since there's two times less
+        calculations, but make robots move 0.5 times as fast. Using 500 and
+        0.002 should keep the normal speed.
+        Using smaller values for real_time_update_rate may cause issues with
+        wheel collision detection.
+        -->
+        <real_time_update_rate>1000</real_time_update_rate>
+        <max_step_size>0.001</max_step_size>
+    </physics>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="c_map">
+      <static>true</static>
+      <pose>0 0 -0.05 0 0 0</pose>
+      <link name="ground">
+        <pose>0 0 0.001 0 0 0</pose>
+        <visual name="visual">
+          <geometry>
+			<!--<mesh><uri>file://RoBo_PlayGround.dae</uri></mesh> -->
+        <box>
+          <size>.4 .2 .1</size>
+        </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

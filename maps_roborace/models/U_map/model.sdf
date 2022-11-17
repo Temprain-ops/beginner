@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="U_map">
+    <static>true</static>
+	
+    <link name="u_map">
+	  <pose> 0 0 0.01  0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+	      <mesh>
+		    <uri>model://U_map/materials/meshes/RoBo_PlayGround.dae</uri>
+		  </mesh>
+        </geometry>
+      </visual>
+    </link>
+	
+	<link name="walls">
+	  <pose> 0 0 0.01  0 0 -1.5708</pose>
+      <collision name="collision">
+        <geometry>
+	      <mesh>
+		    <uri>model://U_map/materials/meshes/RoBo_PlayGround.stl</uri>
+		  </mesh>
+        </geometry>
+      </collision>
+	</link>
+	
+  </model>
+</sdf>
